@@ -47,7 +47,7 @@ add_filter(
 	function ( $tag, $handle ) {
 		if ( 'frase-script' === $handle ) {
 			$tag = str_replace( '></', ' data-hash="' . get_option( 'frase_data_hash', '' ) . '" async></', $tag );
-			$tag = str_replace( $handle . '-js', $handle, $tag );
+			$tag = str_replace( "{$handle}-js", $handle, $tag );
 		}
 
 		return $tag;
