@@ -77,10 +77,25 @@ class FrasePlugin {
 		}
 	}
 
+	/**
+	 * Update our script to have the right markup.
+	 *
+	 * @param string $tag    The script tag markup.
+	 * @param string $handle The script's WordPress handle.
+	 *
+	 * @return string
+	 */
 	public static function scriptLoader( $tag, $handle ) {
 		if ( 'frase-script' === $handle ) {
 			$tag = str_replace( '></', ' data-hash="' . self::getDataHash() . '" async></', $tag );
-			$tag = str_replace( "{$handle}-js", $handle, $tag );
+			// Check if an ID exists
+			if ( false === strpos( $tag, 'id=' ) ) {
+				// If not, add it
+				$tag = str_replace( '<script', '<script id="frase-script"', $tag );
+			} else {
+				// If so, replace it
+				$tag = str_replace( "{$handle}-js", $handle, $tag );
+			}
 		}
 
 		return $tag;
