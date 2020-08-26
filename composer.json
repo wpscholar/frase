@@ -1,0 +1,13 @@
+{
+  "name": "wpscholar/frase",
+  "description": "A WordPress plugin for integrating with Frase.io Answer Assistants",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Micah Wood",
+      "email": "micah@wpscholar.com"
+    }
+  ],
+  "require": {}
+}

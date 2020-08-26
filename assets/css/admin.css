@@ -1,0 +1,13 @@
+.frase-script {
+    display: inline-block;
+    white-space: nowrap;
+    border: 1px solid darkgrey;
+    border-radius: 3px;
+    padding: .25em .5em;
+}
+
+.frase-highlight {
+    background-color: #1EA374;
+    color: white;
+    padding: 0 .1em;
+}
